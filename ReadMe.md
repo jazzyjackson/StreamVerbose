@@ -14,6 +14,13 @@ observer.observe(Destination)
 Note that while the EventSeries constructor is variadic, the observe function is not!
 You can also pass one or more streams to the constructor and add more streams later by calling observe.
 
+EventSeries is an object stream. Provided are two options to format the output.
+
+es2column looks like:
+```js
+observer.pipe(new es2column).pipe(process.stdout)
+```
+
 ```
 CountUpTo      ExponentiateBy LineLog
                pipe =>
@@ -70,7 +77,9 @@ end =>
 ```
 
 I'm also imagining some cool real time visualizations by tailing the ldjson file you can get by piping EventSeries through es2json and then piping to a destination file:
-
+```js
+observer.pipe(new es2json).pipe(process.stdout)
+```
 ```JSON
 {"source":"ExponentiateBy","event":"pipe =>","index":1}
 {"source":"LineLog","event":"pipe =>","index":2}
