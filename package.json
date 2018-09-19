@@ -1,0 +1,25 @@
+{
+  "name": "streamverbose",
+  "version": "0.1.0",
+  "description": "An observer function to visualize the events occurring within a stream pipeline",
+  "main": "EventSeries.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jazzyjackson/StreamVerbose.git"
+  },
+  "keywords": [
+    "stream",
+    "emit",
+    "observe",
+    "spy"
+  ],
+  "author": "Colten Jackson",
+  "license": "SEE LICENSE IN CONTINUITY.LICENSE",
+  "bugs": {
+    "url": "https://github.com/jazzyjackson/StreamVerbose/issues"
+  },
+  "homepage": "https://github.com/jazzyjackson/StreamVerbose#readme"
+}
