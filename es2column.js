@@ -5,7 +5,7 @@ const stream = require('stream')
  * Suitable for piping to process.stdout or a file.
  */
 module.exports = class es2column extends stream.Transform {
-    constructor(options = {colWidth: 20}){
+    constructor(options = {colWidth: 16}){
         super({objectMode: true})
         this.colWidth = options.colWidth
         this.on('pipe', source => {
