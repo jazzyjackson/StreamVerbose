@@ -15,10 +15,10 @@ module.exports = {
     },
 
     ExponentiateBy: class ExponentiateBy extends Transform {
-        constructor({exponent, errorProbability}){
+        constructor(exponent, options = {}){
             super()
             this.exp = exponent
-            this.err = errorProbability
+            this.err = options.errorProbability || 0
         }
 
         _transform(chunk, encoding, done){

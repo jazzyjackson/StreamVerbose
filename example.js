@@ -5,7 +5,7 @@ const fs = require('fs')
 const stream = require('stream')
 
 let Source = new CountUpTo(5)
-let Transform = new ExponentiateBy({exponent: 2, errorProbability: 0})
+let Transform = new ExponentiateBy(2)
 let Destination = new LineLog
 
 let Observer = new EventSeries(Source, Transform, Destination)
