@@ -133,3 +133,5 @@ observer.pipe(new es2json).pipe(process.stdout)
 {"source":"LineLog","event":"finish =>","index":2}
 {"source":"LineLog","event":"unpipe =>","index":2}
 ```
+
+A planned improvement is to include a 'captureState: true' option in EventSeries' constructor that copies all the propeties of a stream object before and after each event, so you can inspect how these internal changes are affected by events.
