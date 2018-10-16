@@ -9,7 +9,11 @@ module.exports = class EventSeries extends stream.Readable {
     constructor(){
         super({objectMode: true})
         this.eventSeries = new Array
-        this.streamSeries = Array.from(arguments, this.observe.bind(this))
+        this.streamSeries = new Array
+
+        Array.from(arguments).forEach(newStream => {
+            this.observe(newStream)
+        })
     }
 
     _read(){ /* nothing happens here. everything is pushed on event */ }
@@ -19,9 +23,11 @@ module.exports = class EventSeries extends stream.Readable {
      * Observe can be called on any stream. Attaches spies and even listeners.
      */
     observe(newStream){
-        if(!newStream instanceof stream) throw new Error("This isn't going to work if you don't feed me a stream.")
+        if(!arguments.length || arguments.length > 1) throw new Error("Observe takes a single argument. To pass multiple arguments use the EventSeries constructor.")
+        if(!(newStream instanceof stream)) throw new Error("This isn't going to work if you don't feed me a stream.")
         this.attachSpies(newStream)
         this.attachEvents(newStream)
+        this.streamSeries.push(newStream)
         return newStream
     }
 
