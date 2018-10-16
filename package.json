@@ -1,6 +1,6 @@
 {
   "name": "streamverbose",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "An observer function to visualize the events occurring within a stream pipeline",
   "main": "index.js",
   "scripts": {
