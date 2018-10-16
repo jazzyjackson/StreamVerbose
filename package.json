@@ -2,7 +2,7 @@
   "name": "streamverbose",
   "version": "0.1.3",
   "description": "An observer function to visualize the events occurring within a stream pipeline",
-  "main": "EventSeries.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
